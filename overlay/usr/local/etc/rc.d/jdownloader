@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# PROVIDE: jdownloader
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable/configure this service:
+#
+# jdownloader_enable (bool):         Set to NO by default.
+#                                    Set it to YES to enable it.
+# jdownloader_user (user):           Set user to run the service as.
+#                                    The default is jdownloader
+#
+
+. /etc/rc.subr
+name="jdownloader"
+rcvar="${name}_enable"
+load_rc_config $name
+
+: ${jdownloader_enable:="NO"}
+: ${jdownloader_user:="jdownloader"}
+: ${jdownloader_javaopt:="-Djava.awt.headless=true"}
+
+pidfile_child="/var/run/${name}.pid"
+pidfile="/var/run/${name}_daemon.pid"
+
+command="/usr/sbin/daemon"
+command_args="-f -P ${pidfile} -p ${pidfile_child} /usr/local/bin/java ${jdownloader_javaopt} -jar /usr/local/jdownloader/JDownloader.jar"
+start_precmd="touch ${pidfile}; chown ${jdownloader_user} ${pidfile}; touch ${pidfile_child}; chown ${jdownloader_user} ${pidfile_child}"
+stop_postcmd="rm -f ${pidfile}; rm -f ${pidfile_child}"
+
+run_rc_command "$1"
+
