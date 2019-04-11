@@ -1,0 +1,16 @@
+#!/bin/sh
+
+service jdownloader stop >& /dev/null
+
+jdownloaderset email $1
+if [ $? -ne 0 ] ; then
+  exit 1
+fi
+
+jdownloaderset password $2
+if [ $? -ne 0 ] ; then
+  exit 1
+fi
+
+service jdownloader start
+
