@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Get configuration value for specified key from the MyJDownloaderSettings json file
+# Example use: sudo iocage get -P devicename jdownloader
+
+CONFIG_FILE=/usr/local/jdownloader/cfg/org.jdownloader.api.myjdownloader.MyJDownloaderSettings.json
+
+case $1 in
+    email) echo `jq -r ".$1" $CONFIG_FILE`
+           ;;
+    password) echo `jq -r ".$1" $CONFIG_FILE`
+              ;;
+
+    devicename) echo `jq -r ".$1" $CONFIG_FILE`
+                ;;
+
+    *) echo "Unknown option">&2 ; exit 1
+            ;;
+esac
+

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Set appropriate configuration option in the MyJDownloader Settings json file
+# Set specified configuration values in the MyJDownloaderSettings json file
 # Example use: sudo iocage set -P email=user@email.com password=MySecretP@ss jdownloader
 
 CONFIG_FILE=/usr/local/jdownloader/cfg/org.jdownloader.api.myjdownloader.MyJDownloaderSettings.json

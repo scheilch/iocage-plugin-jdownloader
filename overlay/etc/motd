@@ -9,9 +9,6 @@ The official homepage is http://jdownloader.org/
 
 Getting started with this plugin:
  - register for a free account at https://my.jdownloader.org
- - run the following command to link to your account:
+ - run the following command to link to your account to the plugin:
      jdownloaderinit <email> <password>
- - start the plugin service or just restart the plugin jail
-     service jdownloader start
-
      

@@ -1,6 +1,14 @@
 #!/bin/sh
+# Link your account from https://my.jdownloader.org to the plugin
 
-service jdownloader stop >& /dev/null
+usage="$(basename "$0") <email> <password>"
+
+if [ ! $# -eq 2 ]; then
+    echo "USAGE: $usage"
+    exit 1
+fi
+
+service jdownloader stop >/dev/null 2>&1
 
 jdownloaderset email $1
 if [ $? -ne 0 ] ; then
