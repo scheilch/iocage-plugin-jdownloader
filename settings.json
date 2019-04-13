@@ -1,0 +1,27 @@
+{
+	"servicerestart":"service jdownloader restart",
+	"serviceget": "/usr/local/bin/jdownloaderget",
+	"serviceset": "/usr/local/bin/jdownloaderset",
+	"options":
+	{
+		"email": {
+			"type": "string",
+			"name": "Email",
+			"description": "MyJDownloader account email",
+			"requirerestart": true
+		},
+		"password": {
+			"type": "password",
+			"name": "Password",
+			"description": "Password for MyJDownloader account",
+			"requirerestart": true
+		},
+		"devicename": {
+			"type": "string",
+			"name": "Device name",
+			"description": "Name for JDownloader device",
+			"default": "plugin@FreeNAS",
+			"requirerestart": true
+		}
+	}
+}
