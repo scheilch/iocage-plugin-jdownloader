@@ -1,0 +1,5 @@
+{
+  "binarypathprobe" : "/usr/local/bin/ffprobe",
+  "binarypath" : "/usr/local/bin/ffmpeg"
+}
+
