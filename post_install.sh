@@ -28,9 +28,9 @@ sysrc -f /etc/rc.conf jdownloader_enable="YES"
 sysrc -f /etc/rc.conf jdownloader_user="$USER_NAME"
 
 # Set MyJD User Credentials
-echo -n "Enter your MyJD Email:"
+printf "Enter your MyJD Email:"
 read email
-echo -n  "Enter your MyJD Password (hidden):" 
+printf  "Enter your MyJD Password (hidden):" 
 read password
 jdownloaderinit $email $password
 
@@ -42,7 +42,7 @@ cat << EOF > /root/PLUGIN_INFO
 To complete the setup:
  - add a mountpoint at the jails options for your Downloads
  - register for a free account at https://my.jdownloader.org
- - run the following command to link to your account to the plugin:
+ - run the following command to link to your account to the plugin if you hae not already done:
      jdownloaderinit <email> <password>
 
 EOF
