@@ -40,6 +40,7 @@ cat << EOF > /root/PLUGIN_INFO
 ***** The JDownloader plugin is installed *****
 
 To complete the setup:
+ - add a mountpoint at the jails options for your Downloads
  - register for a free account at https://my.jdownloader.org
  - run the following command to link to your account to the plugin:
      jdownloaderinit <email> <password>
