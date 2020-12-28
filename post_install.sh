@@ -30,8 +30,8 @@ sysrc -f /etc/rc.conf jdownloader_user="$USER_NAME"
 # Set MyJD User Credentials
 echo -n "Enter your MyJD Email:"
 read email
-echo -n "Enter your MyJD Password (hidden):" 
-read -s password
+echo -n  "Enter your MyJD Password (hidden):" 
+read password
 jdownloaderinit $email $password
 
 # Provide instructions
