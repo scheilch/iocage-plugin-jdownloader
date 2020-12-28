@@ -27,13 +27,6 @@ chown -R $USER_NAME:$USER_NAME .
 sysrc -f /etc/rc.conf jdownloader_enable="YES"
 sysrc -f /etc/rc.conf jdownloader_user="$USER_NAME"
 
-# Set MyJD User Credentials
-printf "Enter your MyJD Email:"
-read email
-printf  "Enter your MyJD Password (hidden):" 
-read password
-jdownloaderinit $email $password
-
 # Provide instructions
 cat << EOF > /root/PLUGIN_INFO
 
